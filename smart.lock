@@ -1,0 +1,52 @@
+{
+  "meteor": {
+    "git": "git://github.com/meteor/meteor.git",
+    "tag": "release/0.8.0",
+    "commit": "172f709a5ff5f1186455604b90d8b45d64cba8f9"
+  },
+  "dependencies": {
+    "basePackages": {
+      "useful": {
+        "git": "git@github.com:usefulio/meteor-useful-package.git",
+        "branch": "master"
+      }
+    },
+    "packages": {
+      "useful": {
+        "git": "git@github.com:usefulio/meteor-useful-package.git",
+        "branch": "master",
+        "commit": "bbf4008d81969ddf663bd8a3a117bb244d42d5c9"
+      },
+      "collection-hooks": {
+        "git": "https://github.com/matb33/meteor-collection-hooks.git",
+        "tag": "v0.6.3",
+        "commit": "70f2598bf991cb36effd72aea2555cba96f88355"
+      },
+      "iron-router": {
+        "git": "git://github.com/EventedMind/iron-router.git",
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
+      },
+      "iron-router-helpers": {
+        "git": "git://github.com/EventedMind/iron-router-helpers.git",
+        "tag": "master",
+        "commit": "750b0400fc877dc75bf92c88fe0edf4a0566a04d"
+      },
+      "moment-with-langs": {
+        "git": "https://github.com/jeeeyul/meteor-moment-with-langs.git",
+        "tag": "v2.5.1",
+        "commit": "75f725898f6d5c3dddc54f1f619fe3b184f596a2"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
+      }
+    }
+  }
+}
