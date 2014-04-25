@@ -41,4 +41,5 @@ if (Meteor.isClient) {
 // will be put into individual route files.
 Router.map(function () {
 	this.route('home', {path: '/'});
+	this.route('messages', {path: '/messages'});
 });

@@ -1,7 +1,29 @@
 <template name="Header">
 	<div id="header">
-		<div class="container">
-			Header Here.
+			<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="/">Home</a></li>
+					{{#if loggedIn}}
+					<li><a href="/contacts">Contacts</a></li>
+					<li><a href="/messages">Messages</a></li>
+					{{/if}}
+				</ul>
+				{{#if needsLogin}}
+				<form class="navbar-form navbar-right">
+					<div class="form-group">
+						<input class="form-control" type="username" placeholder="username" >
+						<input class="form-control" type="password" placeholder="password" >
+					</div>
+					<input class="btn btn-submit" type="submit" value="Login">
+					<input class="btn btn-register" type="button" value="Register">
+				</form>
+				{{else}}
+				<ul class="nav navbar-nav navbar-right">
+					<li><a>Welcome {{userName}}</a></li>
+				</ul>
+				{{/if}}
 		</div>
+			</div>
 	</div>
 </template>
