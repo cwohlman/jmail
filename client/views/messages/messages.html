@@ -1,8 +1,15 @@
 <template name="Messages">
-	{{#each outbox}}
-		Message!
-	{{/each}}
-	{{#each inbox}}
-		Message!
-	{{/each}}
+	<h1>Inbox</h1> 
+	<ul>
+		{{#each outbox}}
+			<li>{{title}}</li>
+		{{/each}}
+	</ul>
+	<a class="btn" href="{{pathFor 'compose'}}">Compose</a>
+	<h1>Sent</h1>
+	<ul>
+		{{#each inbox}}
+			<li>{{title}}</li>
+		{{/each}}
+	</ul>
 </template>

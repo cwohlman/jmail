@@ -42,4 +42,5 @@ if (Meteor.isClient) {
 Router.map(function () {
 	this.route('home', {path: '/'});
 	this.route('messages', {path: '/messages'});
+	this.route('contacts', {path: '/contacts'});
 });

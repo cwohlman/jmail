@@ -1,0 +1,18 @@
+<template name="Contacts">
+	<form class="form-inline search-form">
+		<div class="form-group"><input class="form-control search-value" type="text" placeholder="Search"></div>
+	</form>
+	<ul class="nav nav-stacked nav-nolinks">
+		{{#each filteredContacts}}
+			<li><a>{{name}} ({{email}})</a></li>
+		{{else}}
+			<li><a>No Contacts Found</a></li>
+		{{/each}}
+	</ul>
+	<form class="form-inline newuser-form">
+		<div class="form-group"><input class="form-control name-value" type="text" placeholder="Name"></div>
+		<div class="form-group"><input class="form-control email-value" type="email" placeholder="Email"></div>
+		<div class="form-group"><input class="form-control tags-value" type="text" placeholder="Tags"></div>
+		<input type="submit" value="Add User">
+	</form>
+</template>
