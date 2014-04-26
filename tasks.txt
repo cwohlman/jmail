@@ -1,0 +1,17 @@
+The design of the UI is not very important, don't spend too much time just trying to make things look nice - quality code is the key.
+   2. The app consists of at least three pages: home page, list of contacts, login/register page.
+3. The home page basically contains nothing, unless you think of something.
+   4. The login register page should use the Meteor Accounts system, but not the default meteor accounts-ui.
+5. Users must register with an email/password. The user must verify their email using the built-in email verification feature of the Meteor account system, but you need to customize the page they actually see and the email that gets sent when they create an account/verify their email.
+	6. There are at least three Collections in this application: the built-in Meteor.users, Contacts and Emails. Meteor.users is re-exported as just Users by the useful package, just fyi.
+	7. The user can add a contact, consisting of an email address, a name, and a set of user entered, non-pre-specified "tags" like "San Francisco", "Doctors" or "big spender".
+	8. The list of the user's contacts will be shown in the "contacts page" and it will need to show the name, email and tags of that contact.
+	9. The user can filter their list of contacts based on tags.
+	10. Each contact will have a "send message" button that will pop up a modal allowing the user to enter a Subject and a Body for the emailmessage to send to that contact.
+	11. When the User clicks the "Send" button on the email popup that email and all relevant data will be stored as an "email" document in the Emails collection, and send the email.
+12. You should include validation on all your forms.
+13. You should make proper use of Collection.allow/Collection.deny rules for security.
+	14. As you blaze through these requirements, please upload your code to github and add me as a collaborator to the project. My github username is ianserlin.
+
+Questions:
+	Any need for allow and deny rules in this app?

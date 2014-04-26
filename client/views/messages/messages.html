@@ -1,15 +1,8 @@
 <template name="Messages">
-	<h1>Inbox</h1> 
+	<h3>Sent Emails</h3> 
 	<ul>
 		{{#each outbox}}
-			<li>{{title}}</li>
-		{{/each}}
-	</ul>
-	<a class="btn" href="{{pathFor 'compose'}}">Compose</a>
-	<h1>Sent</h1>
-	<ul>
-		{{#each inbox}}
-			<li>{{title}}</li>
+			<li><b>{{to}}</b> {{subject}} - {{body}}</li>
 		{{/each}}
 	</ul>
 </template>
