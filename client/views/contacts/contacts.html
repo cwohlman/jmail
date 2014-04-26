@@ -1,12 +1,24 @@
 <template name="Contacts">
 	<form class="form-inline search-form">
 		<div class="form-group"><input class="form-control search-value" type="text" placeholder="Search"></div>
+		{{#each allTags}}
+			<span class="tag">{{this}}</span>
+		{{/each}}
 	</form>
-	<ul class="nav nav-stacked nav-nolinks">
+	<ul class="nav nav-stacked nav-contacts">
 		{{#each filteredContacts}}
-			<li><a>{{name}} ({{email}})</a></li>
+			<li>
+				<a>
+					<span>{{name}}</span>
+					<span>({{email}})</span>
+					{{#each tags}}
+						<span class="tag">{{this}}</span>
+					{{/each}}
+					<button class="btn btn-primary pull-right">Send</button>
+				</a>
+			</li>
 		{{else}}
-			<li><a>No Contacts Found</a></li>
+			<li><span>No Contacts Found</span></li>
 		{{/each}}
 	</ul>
 	<form class="form-inline newuser-form">

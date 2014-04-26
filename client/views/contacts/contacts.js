@@ -16,6 +16,10 @@ Template.Contacts.helpers({
 			});
 		}
 		return result;
+	},
+	allTags: function () {
+		var result = this.contacts.collection.find().fetch();
+		return _.chain(result).map(function(a){return a.tags}).flatten().uniq().value();
 	}
 });
 
@@ -36,5 +40,8 @@ Template.Contacts.events({
 	'keydown .search-value': function (e, tmpl) {
 		var value = e.target.value;
 		Session.set('search', value);
+	},
+	'click .nav-contacts li': function (e, tmpl) {
+		// TODO: edit contacts
 	}
 });
