@@ -41,6 +41,30 @@ Template.Contacts.events({
 		var value = e.target.value;
 		Session.set('search', value);
 	},
+	'click .btn-send': function (e, tmpl) {
+		var contact = this;
+		var modal = $('.send-modal');
+		var sendFunction = function () {
+			var subject = modal.find('.subject-value').val();
+			var body = modal.find('.body-value').val();
+			Meteor.call('sendMessage', {
+				to: contact.email,
+				subject: subject,
+				body: body
+			});
+			modal.modal('hide');
+		};
+		// Remove any handlers
+		modal.off('submit', '.form');
+		modal.off('click', '.btn-primary');
+		// Attach submit handler
+		modal.on('submit', '.form', sendFunction);
+		modal.on('click', '.btn-primary', sendFunction);
+
+		modal.find('.to-value').text(contact.email);
+
+		modal.modal();
+	},
 	'click .nav-contacts li': function (e, tmpl) {
 		// TODO: edit contacts
 	}
