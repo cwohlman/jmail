@@ -16,5 +16,11 @@ Meteor.methods({
 			subject: subject,
 			body: body
 		});
+		Email.send({
+			from: Meteor.user().email,
+			to: to,
+			subject: subject,
+			text: body
+		})
 	}
 });

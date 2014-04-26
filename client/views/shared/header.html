@@ -10,15 +10,16 @@
 					{{/if}}
 				</ul>
 				{{#if needsLogin}}
-				<form class="navbar-form navbar-right">
+				<form class="navbar-form navbar-right form-login">
 					<div class="form-group">
 						<input class="form-control" type="email" placeholder="email" >
 						<input class="form-control" type="password" placeholder="password" >
 					</div>
-					<input class="btn btn-submit" type="submit" value="Login">
+					<input class="btn btn-submit btn-primary" type="submit" value="Login">
 					<input class="btn btn-register" type="button" value="Register">
 				</form>
 				{{else}}
+				<form class="navbar-form navbar-right"><button class="btn btn-logout">Logout</button></form>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a>Welcome {{userName}}</a></li>
 				</ul>
