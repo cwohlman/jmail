@@ -6,7 +6,7 @@ Template.Header.helpers({
 		return !Meteor.userId();
 	},
 	userName: function () {
-		return Meteor.user() && Meteor.user().email;
+		return Meteor.user() && Meteor.user().emails[0].address;
 	}
 });
 
