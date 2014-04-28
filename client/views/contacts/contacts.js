@@ -46,15 +46,18 @@ Template.Contacts.events({
 	'click .btn-send': function (e, tmpl) {
 		var contact = this;
 		var modal = $('.send-modal');
-		var sendFunction = function () {
-			var subject = modal.find('.subject-value').val();
-			var body = modal.find('.body-value').val();
-			Meteor.call('sendMessage', {
-				to: contact.email,
-				subject: subject,
-				body: body
-			});
-			modal.modal('hide');
+		var sendFunction = function (e) {
+			if (e.type == 'submit') e.preventDefault();
+			if (modal.find('form')[0].checkValidity()) {
+				var subject = modal.find('.subject-value').val();
+				var body = modal.find('.body-value').val();
+				Meteor.call('sendMessage', {
+					to: contact.email,
+					subject: subject,
+					body: body
+				});
+				modal.modal('hide');				
+			}
 		};
 		// Remove any handlers
 		modal.off('submit', '.form');

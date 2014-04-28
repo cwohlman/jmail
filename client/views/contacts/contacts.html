@@ -40,36 +40,36 @@
 	<div class="modal fade send-modal">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title">Modal title</h4>
-	      </div>
-	      <div class="modal-body">
-	        <form class="form-horizontal">
-	        	<div class="form-group">
-	        		<label class="col-sm-2">To</label>
-	        		<div class="col-sm-10">
-		        		<span class="form-control to-value" disabled></span> <!-- email to -->
+	    	<form class="send-form">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">Modal title</h4>
+		      </div>
+		      <div class="modal-body form-horizontal">
+		        	<div class="form-group">
+		        		<label class="col-sm-2">To</label>
+		        		<div class="col-sm-10">
+			        		<span class="form-control to-value" disabled></span> <!-- email to -->
+			        	</div>
 		        	</div>
-	        	</div>
-	        	<div class="form-group">
-	        		<label class="col-sm-2">Subject</label>
-	        		<div class="col-sm-10">
-		        		<input class="form-control subject-value" type="text">
+		        	<div class="form-group">
+		        		<label class="col-sm-2">Subject</label>
+		        		<div class="col-sm-10">
+			        		<input class="form-control subject-value" type="text" required>
+			        	</div>
 		        	</div>
-	        	</div>
-	        	<div class="form-group">
-	        		<label class="col-sm-2">Body</label>
-	        		<div class="col-sm-10">
-		        		<textarea class="form-control body-value"></textarea>
+		        	<div class="form-group">
+		        		<label class="col-sm-2">Body</label>
+		        		<div class="col-sm-10">
+			        		<textarea class="form-control body-value" required></textarea>
+			        	</div>
 		        	</div>
-	        	</div>
-	        </form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Send</button>
-	      </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <input type="submit" class="btn btn-primary" value="Send">
+		      </div>
+		  </form>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
