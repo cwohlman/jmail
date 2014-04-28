@@ -1,3 +1,5 @@
+
+
 Template.Contacts.helpers({
 	filteredContacts: function () {
 		var filter = Session.get('search');

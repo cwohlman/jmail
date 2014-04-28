@@ -11,20 +11,25 @@
 				</ul>
 				{{#if needsLogin}}
 				<form class="navbar-form navbar-right form-login">
-					<div class="form-group">
-						<input class="form-control" type="email" placeholder="email" >
-						<input class="form-control" type="password" placeholder="password" >
-					</div>
+					{{#each inputs}}
+						{{> formGroup}}
+					{{/each}}
 					<input class="btn btn-submit btn-primary" type="submit" value="Login">
 					<input class="btn btn-register" type="button" value="Register">
 				</form>
 				{{else}}
 				<form class="navbar-form navbar-right"><button class="btn btn-logout">Logout</button></form>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a>Welcome {{userName}}</a></li>
+					<li><a>Welcome {{email}}</a></li>
 				</ul>
 				{{/if}}
 		</div>
 			</div>
+	</div>
+</template>
+<template name="formGroup">
+	<div class="form-group {{inputStyle}}">
+		<input class="form-control" type="{{type}}" placeholder="{{placeholder}}" >
+		<span class="form-control-static">{{inputHelpText}}</span>
 	</div>
 </template>
