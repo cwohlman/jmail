@@ -36,3 +36,14 @@ Helpers = {};
 _.each(Helpers, function (helper, key) {
   Handlebars.registerHelper(key, helper)
 });
+
+Meteor.startup(function () {
+  if (Accounts._verifyEmailToken) {
+    Accounts.verifyEmail(Accounts._verifyEmailToken, function(error) {
+      Accounts._enableAutoLogin();
+      if (!error)
+        loginButtonsSession.set('justVerifiedEmail', true);
+      // XXX show something if there was an error.
+    });
+  }
+});
