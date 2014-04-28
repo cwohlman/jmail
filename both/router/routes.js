@@ -9,7 +9,7 @@ Router.configure({
 //Any function that is related to routes, are going to be in Router namespace.
 
 Router.mustBeLoggedIn = function () {
-	if(!Meteor.user()) {
+	if(!Meteor.user() || !App.isUserVerified()) {
 		this.redirect("home");
 	}
 };

@@ -1,5 +1,9 @@
 <template name="Home">
 	<div class="container">
-		Useful Home Page
+		{{#with state}}
+		<div class="{{style}}">
+			{{message}}
+		</div>
+		{{/with}}
 	</div>
 </template>
