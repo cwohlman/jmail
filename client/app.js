@@ -2,6 +2,15 @@ App.subs = {
   userData: Meteor.subscribe('current_user_data')
 };
 
+App.sendNotification = function (status, message) {
+  Session.set('notification', {
+    user_id: Meteor.userId(),
+    status: status, // TODO:
+    time: new Date(),
+    read: false,
+    message: message
+  });
+};
 // App admin code like Meteor.startup or 
 // Deps.autorun will stay in this file
 Deps.autorun(function() {
@@ -33,6 +42,7 @@ App.logout = function (cb) {
 //Global Helpers are also in here!
 Helpers = {};
 
+
 _.each(Helpers, function (helper, key) {
   Handlebars.registerHelper(key, helper)
 });
@@ -41,8 +51,8 @@ Meteor.startup(function () {
   if (Accounts._verifyEmailToken) {
     Accounts.verifyEmail(Accounts._verifyEmailToken, function(error) {
       Accounts._enableAutoLogin();
-      if (!error)
-        loginButtonsSession.set('justVerifiedEmail', true);
+      if (!error) App.sendNotification('success', 'Thank You for verifying your Email! You may now add contacts and send messages.');
+      else App.sendNotification('error', 'Could not verify email!');
       // XXX show something if there was an error.
     });
   }
