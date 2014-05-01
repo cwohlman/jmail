@@ -8,16 +8,17 @@ Meteor.methods({
 		if (!to) throw new Meteor.Error("All messages must have a recipient");
 		if (!subject) throw new Meteor.Error("All messages must have a subject");
 		if (!body) throw new Meteor.Error("All messages must have a body");
-		// TODO: Actually send the email!
+		var user = Meteor.user();
+		var from = user.emails[0].address;
 		Messages.insert({
 			from_id: Meteor.userId(),
-			from: Meteor.user().email,
+			from: from,
 			to: to,
 			subject: subject,
 			body: body
 		});
 		Email.send({
-			from: Meteor.user().email,
+			from: from,
 			to: to,
 			subject: subject,
 			text: body
