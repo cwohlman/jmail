@@ -47,12 +47,12 @@ Template.Contacts.events({
 		var contact = this;
 		var modal = $('.send-modal');
 		var sendFunction = function (e) {
-			if (e.type == 'submit') e.preventDefault();
+			e.preventDefault();
 			if (modal.find('form')[0].checkValidity()) {
 				var subject = modal.find('.subject-value').val();
 				var body = modal.find('.body-value').val();
 				Meteor.call('sendMessage', {
-					to: contact.email,
+					to_id: contact._id,
 					subject: subject,
 					body: body
 				});
@@ -60,11 +60,9 @@ Template.Contacts.events({
 			}
 		};
 		// Remove any handlers
-		modal.off('submit', '.form');
-		modal.off('click', '.btn-primary');
+		modal.off('submit', '.send-form');
 		// Attach submit handler
-		modal.on('submit', '.form', sendFunction);
-		modal.on('click', '.btn-primary', sendFunction);
+		modal.on('submit', '.send-form', sendFunction);
 
 		modal.find('.to-value').text(contact.email);
 
