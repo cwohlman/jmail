@@ -4,7 +4,7 @@ ContactsController = RouteController.extend({
   },
   data: function () {
   	return {
-  		contacts: contacts.find()
+  		contacts: Contacts.find()
   	};
   }
 });

@@ -1,1 +1,1 @@
-contacts = new Meteor.Collection('contacts');
+Contacts = new Meteor.Collection('contacts');

@@ -12,7 +12,7 @@ Meteor.methods({
 		// Better to use duck typing ie !tags.concat ?
 		if (tags && !(tags instanceof Array)) throw new Meteor.error("The tags property must be an array.");
 		tags = tags || []; // we want to store an empty array if no tags specified.
-		contacts.insert({
+		Contacts.insert({
 			owner_id: Meteor.userId(),
 			name: name,
 			email: email,
