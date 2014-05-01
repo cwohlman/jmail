@@ -21,6 +21,11 @@
 			<li><span class="nav-item">No Contacts Found</span></li>
 		{{/each}}
 	</ul>
+	{{> AddContactForm}}
+	{{> SendMessageModal}}
+</template>
+
+<template name="AddContactForm">
 	<form class="form-inline newuser-form">
 		<div class="form-group {{inputStyle name}}">
 			<input class="form-control name-value" type="text" placeholder="Name" required>
@@ -36,6 +41,9 @@
 		</div>
 		<input type="submit" class="btn" value="Add Contact">
 	</form>
+</template>
+
+<template name="SendMessageModal">
 	<!-- TODO: Move modal to a template, component or shared whatever makes the most sense -->
 	<div class="modal fade send-modal">
 	  <div class="modal-dialog">
