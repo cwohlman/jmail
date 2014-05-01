@@ -1,6 +1,6 @@
 ContactsController = RouteController.extend({
   waitOn: function () {
-  	Meteor.subscribe('contacts');
+  	return this.subscribe('contacts');
   },
   data: function () {
   	return {
