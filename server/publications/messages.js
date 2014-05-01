@@ -1,5 +1,5 @@
 Meteor.publish('messages', function () {
-	return messages.find({
+	return Messages.find({
 		from_id: this.userId 
 	});
 })

@@ -4,10 +4,10 @@ MessagesController = RouteController.extend({
   },
   data: function () {
   	return {
-  		inbox: messages.find({
+  		inbox: Messages.find({
   			to_id: Meteor.userId()
   		}),
-  		outbox: messages.find({
+  		outbox: Messages.find({
   			from_id: Meteor.userId()
   		})
   	};
