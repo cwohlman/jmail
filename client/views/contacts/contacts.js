@@ -3,7 +3,11 @@
 Template.Contacts.helpers({
 	filteredContacts: function () {
 		var filter = Session.get('search');
-		var result = this.contacts.collection.find().fetch(); // Is this the correct way to preserve the reactiveness of the cursor?
+		this.contacts.rewind();
+		var result = this.contacts.fetch(); 
+		// Is this the correct way to preserve the reactiveness of the cursor?
+		// It's a great question and I'm glad you thought it looked weird and
+		// asked, check out: http://docs.meteor.com/#rewind
 		if (filter) {
 			result = _.filter(result, function (item) {
 				// TODO: implement sublime text style search?
